@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Runtime.InteropServices;
+using System.Text.Json;
 
 namespace Algorithms;
 
@@ -18,11 +19,18 @@ public class FlattenArray
         foreach (var input in inputs)
         {
             Console.WriteLine($"Input: {input.Item1}");
-            Console.WriteLine("Output with Json: " + string.Join(' ',FlattenUsingJson(input.Item1)));
-            Console.WriteLine("Output with Stack: " + string.Join(' ',FlattenWithStack(JsonDocument.Parse(input.Item1))));
+            Console.WriteLine("Output with Json: " + string.Join(' ', FlattenUsingJson(input.Item1)));
+            //conver input.item1 in list of objects
+                        
+            var nestedList = JsonSerializer.Deserialize<List<object>>(input.Item1, new JsonSerializerOptions 
+            {
+                PropertyNameCaseInsensitive = true
+            });
+
+            Console.WriteLine("Output with Stack: " + string.Join(' ',FlattenWithStack(nestedList)));
         }
     }
-
+    
     /// <summary>
     /// Brute Force Solution
     /// </summary>
