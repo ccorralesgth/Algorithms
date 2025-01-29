@@ -10,5 +10,6 @@ public class Program
 
         //new ValidParentheses().run();        
         //new TrappingRainWater().run();
+        new FlattenArray().run();
     }
 }
