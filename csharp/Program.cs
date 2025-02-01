@@ -1,6 +1,4 @@
-﻿using Algorithms.Stacks;
-using Algorithms.TwoPointer;
-namespace Algorithms; 
+﻿namespace Algorithms;
 
 public class Program
 {
@@ -10,6 +8,9 @@ public class Program
 
         //new ValidParentheses().run();        
         //new TrappingRainWater().run();
-        new FlattenArray().run();
+        //new FlattenArray().run();
+
+        new ValidAnagram().run();
     }
+    
 }
