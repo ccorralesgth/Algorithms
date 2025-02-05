@@ -5,6 +5,9 @@ using System.Text.Json;
 
 namespace Algorithms;
 
+/// <summary>
+/// Convert an Object to Json
+/// </summary>
 public class JsonConvert
 {
     public static void run()
